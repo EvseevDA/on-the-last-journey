@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.onthelastjourney.backend.dto.AffilationTypeDto;
 import ru.onthelastjourney.backend.entity.AffilationType;
-import ru.onthelastjourney.backend.mapper.AffilationTypeMapper;
 import ru.onthelastjourney.backend.service.AffilationTypeService;
 
 import java.util.List;
@@ -35,13 +34,13 @@ public class AffilationTypeController {
 
     @PostMapping
     public ResponseEntity<AffilationType> save(@RequestBody AffilationTypeDto affilationTypeDto) {
-        return ResponseEntity.ok(service.save(AffilationTypeMapper.fromDto(affilationTypeDto)));
+        return ResponseEntity.ok(service.save(affilationTypeDto));
     }
 
     @PostMapping("/save-all")
     public ResponseEntity<List<AffilationType>>
     saveAll(@RequestBody List<AffilationTypeDto> affilationTypeDtos) {
-        return ResponseEntity.ok(service.saveAll(AffilationTypeMapper.fromDto(affilationTypeDtos)));
+        return ResponseEntity.ok(service.saveAll(affilationTypeDtos));
     }
 
     @PutMapping

@@ -46,16 +46,16 @@ public class ClientController {
         return ResponseEntity.ok(service.update(client));
     }
 
-    @DeleteMapping("/{clientId}")
-    public HttpStatus deleteById(@PathVariable(name = "clientId") Long id) {
-        service.deleteById(id);
+    @DeleteMapping
+    public HttpStatus delete(@RequestBody Client client) {
+        service.delete(client);
 
         return HttpStatus.OK;
     }
 
-    @DeleteMapping
-    public HttpStatus delete(@RequestBody Client client) {
-        service.delete(client);
+    @DeleteMapping("/{clientId}")
+    public HttpStatus deleteById(@PathVariable(name = "clientId") Long clientId) {
+        service.deleteById(clientId);
 
         return HttpStatus.OK;
     }

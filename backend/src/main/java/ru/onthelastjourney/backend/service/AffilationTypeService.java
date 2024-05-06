@@ -2,7 +2,9 @@ package ru.onthelastjourney.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.onthelastjourney.backend.dto.AffilationTypeDto;
 import ru.onthelastjourney.backend.entity.AffilationType;
+import ru.onthelastjourney.backend.mapper.AffilationTypeMapper;
 import ru.onthelastjourney.backend.repository.AffilationTypeRepository;
 
 import java.util.List;
@@ -25,12 +27,12 @@ public class AffilationTypeService {
         return repository.findById(id).get();
     }
 
-    public AffilationType save(AffilationType affilationType) {
-        return repository.save(affilationType);
+    public AffilationType save(AffilationTypeDto dto) {
+        return repository.save(AffilationTypeMapper.fromDto(dto));
     }
 
-    public List<AffilationType> saveAll(List<AffilationType> affilationTypes) {
-        return repository.saveAll(affilationTypes);
+    public List<AffilationType> saveAll(List<AffilationTypeDto> dtos) {
+        return repository.saveAll(AffilationTypeMapper.fromDto(dtos));
     }
 
     public AffilationType update(AffilationType affilationType) {

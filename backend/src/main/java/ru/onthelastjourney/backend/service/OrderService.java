@@ -24,15 +24,15 @@ public class OrderService {
     }
 
     public Order getById(Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
 
-    public Order save(OrderDto orderDto) {
-        return repository.save(OrderMapper.fromDto(orderDto));
+    public Order save(OrderDto dto) {
+        return repository.save(OrderMapper.fromDto(dto));
     }
 
-    public List<Order> saveAll(List<OrderDto> orderDtos) {
-        return repository.saveAll(OrderMapper.fromDto(orderDtos));
+    public List<Order> saveAll(List<OrderDto> dtos) {
+        return repository.saveAll(OrderMapper.fromDto(dtos));
     }
 
     public Order update(Order order) {
