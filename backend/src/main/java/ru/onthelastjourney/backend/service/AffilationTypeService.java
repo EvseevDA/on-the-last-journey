@@ -24,7 +24,7 @@ public class AffilationTypeService {
     }
 
     public AffilationType getById(Long id) {
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow();
     }
 
     public AffilationType save(AffilationTypeDto dto) {
