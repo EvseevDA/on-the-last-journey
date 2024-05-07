@@ -1,10 +1,9 @@
 package ru.onthelastjourney.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.onthelastjourney.backend.dto.EmployeeDto;
 import ru.onthelastjourney.backend.dto.ServiceDto;
 import ru.onthelastjourney.backend.entity.Service;
-import ru.onthelastjourney.backend.mapper.ServiceMapper;
+import ru.onthelastjourney.backend.util.mapper.ServiceMapper;
 import ru.onthelastjourney.backend.repository.ServiceRepository;
 
 import java.util.List;

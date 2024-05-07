@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.AffilationTypeDto;
 import ru.onthelastjourney.backend.entity.AffilationType;
-import ru.onthelastjourney.backend.mapper.AffilationTypeMapper;
+import ru.onthelastjourney.backend.util.mapper.AffilationTypeMapper;
 import ru.onthelastjourney.backend.repository.AffilationTypeRepository;
 
 import java.util.List;

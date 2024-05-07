@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.OrderDto;
 import ru.onthelastjourney.backend.entity.Order;
-import ru.onthelastjourney.backend.mapper.OrderMapper;
+import ru.onthelastjourney.backend.util.mapper.OrderMapper;
 import ru.onthelastjourney.backend.repository.OrderRepository;
 
 import java.util.List;

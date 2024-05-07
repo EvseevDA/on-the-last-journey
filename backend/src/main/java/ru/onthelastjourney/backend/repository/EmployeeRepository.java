@@ -13,5 +13,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
             nativeQuery = true
     )
     Employee getEmployeeBossByEmployeeId(Long employeeId);
-    
+
 }

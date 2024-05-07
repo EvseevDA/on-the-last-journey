@@ -1,4 +1,4 @@
-package ru.onthelastjourney.backend.mapper;
+package ru.onthelastjourney.backend.util.mapper;
 
 import ru.onthelastjourney.backend.dto.ProviderDto;
 import ru.onthelastjourney.backend.entity.Provider;

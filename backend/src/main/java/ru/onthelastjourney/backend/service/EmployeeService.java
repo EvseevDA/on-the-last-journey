@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.EmployeeDto;
 import ru.onthelastjourney.backend.entity.Employee;
-import ru.onthelastjourney.backend.mapper.EmployeeMapper;
+import ru.onthelastjourney.backend.util.mapper.EmployeeMapper;
 import ru.onthelastjourney.backend.repository.EmployeeRepository;
 
 import java.util.List;
