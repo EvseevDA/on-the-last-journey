@@ -9,8 +9,9 @@ import ru.onthelastjourney.backend.entity.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query(
-            value = "SELECT * FROM funeralservice.employees e WHERE e.id = (SELECT reports_to FROM funeralservice.employees e WHERE e.id = ?)",
+            value = "SELECT * FROM funeralservice.employees e WHERE e.id = (SELECT boss_id FROM funeralservice.employees e WHERE e.id = ?)",
             nativeQuery = true
     )
     Employee getEmployeeBossByEmployeeId(Long employeeId);
+    
 }

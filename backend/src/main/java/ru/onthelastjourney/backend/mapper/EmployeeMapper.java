@@ -25,7 +25,7 @@ public class EmployeeMapper {
                 employee.getPhoneNumber(),
                 employee.getPhotoUrl(),
                 employee.getNote(),
-                employee.getReportsTo()
+                employee.getBossId()
         );
     }
 
@@ -53,7 +53,7 @@ public class EmployeeMapper {
                 .phoneNumber(dto.getPhoneNumber())
                 .photoUrl(dto.getPhotoUrl())
                 .note(dto.getNote())
-                .reportsTo(dto.getReportsTo())
+                .bossId(dto.getBossId())
                 .build();
     }
 

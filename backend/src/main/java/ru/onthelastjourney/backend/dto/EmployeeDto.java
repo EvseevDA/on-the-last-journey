@@ -44,6 +44,6 @@ public class EmployeeDto {
 
     private String note;
 
-    private Long reportsTo;
+    private Long bossId;
 
 }

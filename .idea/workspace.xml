@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4d45b532-214b-4abe-a9ce-90ed3ffad8c5" name="Changes" comment="Initial commit:&#10;there is 3 tables of 10 at backend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/dto/EmployeeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/dto/EmployeeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/mapper/EmployeeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/mapper/EmployeeMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/repository/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/service/EmployeeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

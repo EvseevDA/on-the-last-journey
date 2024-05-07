@@ -73,7 +73,7 @@ public class Employee {
     @Column(name = "note")
     private String note;
 
-    @Column(name = "reports_to")
-    private Long reportsTo;
+    @Column(name = "boss_id")
+    private Long bossId;
 
 }
