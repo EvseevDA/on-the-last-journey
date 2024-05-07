@@ -12,5 +12,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
             value = "SELECT * FROM funeralservice.employees e WHERE e.id = (SELECT reports_to FROM funeralservice.employees e WHERE e.id = ?)",
             nativeQuery = true
     )
-    Employee getBossByEmployeeId(Long employeeId);
+    Employee getEmployeeBossByEmployeeId(Long employeeId);
 }

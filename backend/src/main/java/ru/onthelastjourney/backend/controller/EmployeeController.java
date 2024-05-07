@@ -34,8 +34,8 @@ public class EmployeeController {
 
     @GetMapping("/{employeeId}/boss")
     public ResponseEntity<EmployeeDto>
-    getBossByEmployeeId(@PathVariable(name = "employeeId") Long employeeId) {
-        return ResponseEntity.ok(service.getBossByEmployeeId(employeeId));
+    getEmployeeBossByEmployeeId(@PathVariable(name = "employeeId") Long employeeId) {
+        return ResponseEntity.ok(service.getEmployeeBossByEmployeeId(employeeId));
     }
 
     @PostMapping

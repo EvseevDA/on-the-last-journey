@@ -27,8 +27,8 @@ public class EmployeeService {
         return repository.findById(id).orElseThrow();
     }
 
-    public EmployeeDto getBossByEmployeeId(Long id) {
-        return EmployeeMapper.toDto(repository.getBossByEmployeeId(id));
+    public EmployeeDto getEmployeeBossByEmployeeId(Long id) {
+        return EmployeeMapper.toDto(repository.getEmployeeBossByEmployeeId(id));
     }
 
     public Employee save(EmployeeDto employeeDto) {
