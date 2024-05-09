@@ -1,11 +1,11 @@
-package ru.onthelastjourney.backend.compositepk;
+package ru.onthelastjourney.backend.entity.compositepk;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.onthelastjourney.backend.entity.Employee;
 import ru.onthelastjourney.backend.entity.Order;
+import ru.onthelastjourney.backend.entity.Service;
 
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Data
 @Embeddable
-public class OrderEmployeePk implements Serializable {
+public class ServiceOrderPk implements Serializable {
 
     @ManyToOne(
             targetEntity = Order.class,
@@ -24,11 +24,11 @@ public class OrderEmployeePk implements Serializable {
     private Order order;
 
     @ManyToOne(
-            targetEntity = Employee.class,
+            targetEntity = Service.class,
             cascade = CascadeType.MERGE,
             fetch = FetchType.LAZY
     )
-    @JoinColumn(name = "employee_id")
-    private Employee employee;
+    @JoinColumn(name = "service_id")
+    private Service service;
 
 }

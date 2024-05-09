@@ -4,7 +4,7 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
-import ru.onthelastjourney.backend.compositepk.OrderEmployeePk;
+import ru.onthelastjourney.backend.entity.compositepk.OrderEmployeePk;
 
 @Entity
 @Table(name = "orders_employees")

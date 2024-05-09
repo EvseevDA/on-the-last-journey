@@ -8,14 +8,16 @@ import java.util.List;
 public class ClientMapper {
 
     public static ClientDto toDto(Client client) {
-        return new ClientDto(client.getSurname(),
+        return new ClientDto(
+                client.getSurname(),
                 client.getName(),
                 client.getPatronymic(),
                 client.getCountry(),
                 client.getRegion(),
                 client.getCity(),
                 client.getPhoneNumber(),
-                client.getIndex());
+                client.getIndex()
+        );
     }
 
     public static List<ClientDto> toDto(List<Client> clients) {

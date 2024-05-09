@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.onthelastjourney.backend.entity.Employee;
+import ru.onthelastjourney.backend.dto.OrderEmployeeDto;
 import ru.onthelastjourney.backend.service.OrderEmployeeService;
 
 import java.util.List;
@@ -21,23 +21,23 @@ public class OrderEmployeeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Employee>>
+    public ResponseEntity<List<OrderEmployeeDto>>
     getAllEmployeesFromOrderWithId(@PathVariable(name = "orderId") Long orderId) {
         return ResponseEntity.ok(service.getAllEmployeesFromOrderWithId(orderId));
     }
 
     @PostMapping
-    public ResponseEntity<Employee>
+    public ResponseEntity<OrderEmployeeDto>
     addEmployeeToOrderWithId(@PathVariable(name = "orderId") Long orderId,
-                             @RequestBody Employee employee) {
-        return ResponseEntity.ok(service.addEmployeeToOrderWithId(orderId, employee));
+                             @RequestBody OrderEmployeeDto orderEmployeeDto) {
+        return ResponseEntity.ok(service.addEmployeeToOrderWithId(orderId, orderEmployeeDto));
     }
 
     @DeleteMapping
     public HttpStatus
     deleteEmployeeFromOrderWithId(@PathVariable(name = "orderId") Long orderId,
-                                  @RequestBody Employee employee) {
-        service.deleteEmployeeFromOrderWithId(orderId, employee);
+                                  @RequestBody OrderEmployeeDto orderEmployeeDto) {
+        service.deleteEmployeeFromOrderWithId(orderId, orderEmployeeDto);
 
         return HttpStatus.OK;
     }

@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class FuneralAffilation {
 
     @Id

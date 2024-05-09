@@ -8,10 +8,12 @@ import java.util.List;
 public class OrderMapper {
 
     public static OrderDto toDto(Order order) {
-        return new OrderDto(order.getClient(),
+        return new OrderDto(
+                order.getClient(),
                 order.getRegistrationDate(),
                 order.getAppointmentDate(),
-                order.getExecutionDate());
+                order.getExecutionDate()
+        );
     }
 
     public static List<OrderDto> toDto(List<Order> orders) {

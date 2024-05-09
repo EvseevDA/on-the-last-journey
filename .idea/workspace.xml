@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d45b532-214b-4abe-a9ce-90ed3ffad8c5" name="Changes" comment="Initial commit:&#10;there is 3 tables of 10 at backend">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/controller/ServiceOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/repository/ServiceOrderRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/compositepk/OrderEmployeePk.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/compositepk/OrderEmployeePk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/controller/OrderEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/controller/OrderEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/FuneralAffilation.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/FuneralAffilation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/OrderEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/OrderEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/entity/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/repository/OrderEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/repository/OrderEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/service/OrderEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/service/OrderEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/util/OrderEmployeeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/util/mapper/ClientMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/util/mapper/ClientMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/util/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/onthelastjourney/backend/util/mapper/OrderMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +73,7 @@
       <updated>1714997057194</updated>
       <workItem from="1714997058237" duration="825000" />
       <workItem from="1714997922698" duration="666000" />
+      <workItem from="1715279696773" duration="590000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit:&#10;there is 3 tables of 10 at backend">
       <option name="closed" value="true" />

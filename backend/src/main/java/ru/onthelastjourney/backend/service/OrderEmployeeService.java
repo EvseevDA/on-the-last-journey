@@ -2,12 +2,13 @@ package ru.onthelastjourney.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.onthelastjourney.backend.compositepk.OrderEmployeePk;
+import ru.onthelastjourney.backend.dto.OrderEmployeeDto;
 import ru.onthelastjourney.backend.entity.Employee;
 import ru.onthelastjourney.backend.entity.Order;
 import ru.onthelastjourney.backend.entity.OrderEmployee;
+import ru.onthelastjourney.backend.entity.compositepk.OrderEmployeePk;
 import ru.onthelastjourney.backend.repository.OrderEmployeeRepository;
-import ru.onthelastjourney.backend.util.OrderEmployeeUtil;
+import ru.onthelastjourney.backend.util.mapper.OrderEmployeeMapper;
 
 import java.util.List;
 
@@ -21,26 +22,26 @@ public class OrderEmployeeService {
         this.repository = repository;
     }
 
-    public List<Employee> getAllEmployeesFromOrderWithId(Long id) {
-        return OrderEmployeeUtil.employeesOnly(repository.findAllWhereOrderIdIs(id));
+    public List<OrderEmployeeDto> getAllEmployeesFromOrderWithId(Long id) {
+        return OrderEmployeeMapper.toDto(repository.findAllWhereOrderIdIs(id));
     }
 
-    public Employee addEmployeeToOrderWithId(Long orderId, Employee employee) {
-        OrderEmployee orderEmployee = createOrderEmployeeByOrderIdAndEmployee(orderId, employee);
-
-        return OrderEmployeeUtil.employeeOnly(repository.save(orderEmployee));
+    public OrderEmployeeDto addEmployeeToOrderWithId(Long orderId, OrderEmployeeDto dto) {
+        return OrderEmployeeMapper.toDto(
+                repository.save(createOrderEmployeeByOrderIdAndOrderEmployeeDto(orderId, dto))
+        );
     }
 
-    public void deleteEmployeeFromOrderWithId(Long orderId, Employee employee) {
-        OrderEmployeePk orderEmployeePk = createOrderEmployeePkByOrderIdAndEmployee(orderId, employee);
-
-        repository.deleteById(orderEmployeePk);
+    public void deleteEmployeeFromOrderWithId(Long orderId, OrderEmployeeDto dto) {
+        repository.deleteById(
+                createOrderEmployeePkByOrderIdAndOrderEmployeeDto(orderId, dto)
+        );
     }
 
     public void deleteEmployeeFromOrderByOrderIdAndEmployeeId(Long orderId, Long employeeId) {
-        OrderEmployeePk orderEmployeePk = createOrderEmployeePkByOrderIdAndEmployeeId(orderId, employeeId);
-
-        repository.deleteById(orderEmployeePk);
+        repository.deleteById(
+                createOrderEmployeePkByOrderIdAndEmployeeId(orderId, employeeId)
+        );
     }
 
 
@@ -49,29 +50,22 @@ public class OrderEmployeeService {
         return Order.builder().id(id).build();
     }
 
-    private static Employee createEmployeeById(Long id) {
+    private static Employee createEmployeeByEmployeeId(Long id) {
         return Employee.builder().id(id).build();
     }
 
     private static OrderEmployeePk createOrderEmployeePkByOrderIdAndEmployeeId(Long orderId, Long employeeId) {
-        return new OrderEmployeePk(createOrderByOrderId(orderId), createEmployeeById(employeeId));
+        return new OrderEmployeePk(createOrderByOrderId(orderId), createEmployeeByEmployeeId(employeeId));
     }
 
-    private static OrderEmployeePk createOrderEmployeePkByOrderIdAndEmployee(Long orderId, Employee employee) {
-        return new OrderEmployeePk(createOrderByOrderId(orderId), employee);
+    private static OrderEmployeePk createOrderEmployeePkByOrderIdAndOrderEmployeeDto(Long orderId, OrderEmployeeDto dto) {
+        return new OrderEmployeePk(createOrderByOrderId(orderId), dto.getEmployee());
     }
 
-    private static OrderEmployee createOrderEmployeeByOrderIdAndEmployee(Long orderId, Employee employee) {
+    private static OrderEmployee createOrderEmployeeByOrderIdAndOrderEmployeeDto(Long orderId, OrderEmployeeDto dto) {
         return OrderEmployee.builder()
-                .orderEmployeePk(createOrderEmployeePkByOrderIdAndEmployee(orderId, employee))
+                .orderEmployeePk(createOrderEmployeePkByOrderIdAndOrderEmployeeDto(orderId, dto))
                 .build();
     }
-
-    // can be deleted
-//    private static OrderEmployee createOrderEmployeeByOrderIdAndEmployeeId(Long orderId, Long employeeId) {
-//        return OrderEmployee.builder()
-//                .orderEmployeePk(createOrderEmployeePkByOrderIdAndEmployeeId(orderId, employeeId))
-//                .build();
-//    }
 
 }
