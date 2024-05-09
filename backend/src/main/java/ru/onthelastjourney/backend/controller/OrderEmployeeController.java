@@ -10,7 +10,7 @@ import ru.onthelastjourney.backend.service.OrderEmployeeService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders/{orderId}/employees")
+@RequestMapping("/api/orders/{orderId}/employees")
 public class OrderEmployeeController {
 
     private final OrderEmployeeService service;

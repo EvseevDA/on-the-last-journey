@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.OrderService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 public class OrderController {
 
     private final OrderService service;

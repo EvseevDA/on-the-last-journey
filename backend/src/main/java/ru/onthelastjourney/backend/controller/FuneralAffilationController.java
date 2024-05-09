@@ -26,7 +26,7 @@ public class FuneralAffilationController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @GetMapping("/{funeralAffilationId}")
+    @GetMapping("/api/{funeralAffilationId}")
     public ResponseEntity<FuneralAffilation>
     getById(@PathVariable(name = "funeralAffilationId") Long funeralAffilationId) {
         return ResponseEntity.ok(service.getById(funeralAffilationId));

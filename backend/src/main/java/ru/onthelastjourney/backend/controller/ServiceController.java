@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.ServiceService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/services")
+@RequestMapping("/api/services")
 public class ServiceController {
 
     private final ServiceService service;

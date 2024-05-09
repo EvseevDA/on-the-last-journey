@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.ProviderService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/providers")
+@RequestMapping("/api/providers")
 public class ProviderController {
 
     private final ProviderService service;

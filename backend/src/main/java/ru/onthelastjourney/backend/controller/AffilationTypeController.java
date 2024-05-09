@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.AffilationTypeService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/affilation-types")
+@RequestMapping("/api/affilation-types")
 public class AffilationTypeController {
 
     private final AffilationTypeService service;

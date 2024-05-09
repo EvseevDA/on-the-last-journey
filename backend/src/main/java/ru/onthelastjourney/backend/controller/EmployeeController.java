@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.EmployeeService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/api/employees")
 public class EmployeeController {
 
     private final EmployeeService service;

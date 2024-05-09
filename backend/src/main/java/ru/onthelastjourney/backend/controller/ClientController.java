@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.ClientService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/api/clients")
 public class ClientController {
 
     private final ClientService service;
