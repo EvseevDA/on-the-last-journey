@@ -16,6 +16,6 @@ import ru.onthelastjourney.backend.entity.compositepk.OrderEmployeePk;
 public class OrderEmployee {
 
     @EmbeddedId
-    private OrderEmployeePk orderEmployeePk;
+    private OrderEmployeePk pk;
 
 }

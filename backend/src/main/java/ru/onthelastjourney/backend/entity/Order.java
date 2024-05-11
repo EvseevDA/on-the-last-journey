@@ -23,11 +23,12 @@ public class Order {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @ManyToOne(targetEntity = Client.class,
+    @ManyToOne(
+            targetEntity = Client.class,
             cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER)
+            fetch = FetchType.EAGER
+    )
     @JoinColumn(name = "client_id", referencedColumnName = "id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     private Client client;
 
     @Column(name = "registration_date")

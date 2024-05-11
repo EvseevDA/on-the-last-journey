@@ -29,7 +29,6 @@ public class FuneralAffilation {
             fetch = FetchType.LAZY
     )
     @JoinColumn(name = "provider_id", referencedColumnName = "id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Provider provider;
 
@@ -39,7 +38,6 @@ public class FuneralAffilation {
             fetch = FetchType.LAZY
     )
     @JoinColumn(name = "type_id", referencedColumnName = "id")
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private AffilationType affilationType;
 
