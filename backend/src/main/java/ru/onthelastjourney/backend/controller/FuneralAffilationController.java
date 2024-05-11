@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.service.FuneralAffilationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/funeral-affilations")
+@RequestMapping("/api/funeral-affilations")
 public class FuneralAffilationController {
 
     private final FuneralAffilationService service;
