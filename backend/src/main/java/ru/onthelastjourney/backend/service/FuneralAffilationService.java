@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.FuneralAffilationDto;
 import ru.onthelastjourney.backend.entity.FuneralAffilation;
-import ru.onthelastjourney.backend.util.mapper.FuneralAffilationMapper;
 import ru.onthelastjourney.backend.repository.FuneralAffilationRepository;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
+import ru.onthelastjourney.backend.util.exception.ExceptionSupplier;
+import ru.onthelastjourney.backend.util.mapper.FuneralAffilationMapper;
 
 import java.util.List;
 
@@ -23,8 +25,8 @@ public class FuneralAffilationService {
         return repository.findAll();
     }
 
-    public FuneralAffilation getById(Long id) {
-        return repository.findById(id).orElseThrow();
+    public FuneralAffilation getById(Long id) throws EntityNotFoundException {
+        return repository.findById(id).orElseThrow(ExceptionSupplier.funeralAffilationNotFoundById(id));
     }
 
     public FuneralAffilation save(FuneralAffilationDto dto) {

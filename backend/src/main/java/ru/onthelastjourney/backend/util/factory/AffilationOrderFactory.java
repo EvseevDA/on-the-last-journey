@@ -5,6 +5,9 @@ import ru.onthelastjourney.backend.entity.AffilationOrder;
 
 public class AffilationOrderFactory {
 
+    private AffilationOrderFactory() {
+    }
+
     public static AffilationOrder
     createAffilationOrderByOrderIdAndAffilationOrderDto(Long orderId, AffilationOrderDto affilationOrderDto) {
         return AffilationOrder.builder()

@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.AffilationTypeDto;
 import ru.onthelastjourney.backend.entity.AffilationType;
-import ru.onthelastjourney.backend.util.mapper.AffilationTypeMapper;
 import ru.onthelastjourney.backend.repository.AffilationTypeRepository;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
+import ru.onthelastjourney.backend.util.exception.ExceptionSupplier;
+import ru.onthelastjourney.backend.util.mapper.AffilationTypeMapper;
 
 import java.util.List;
 
@@ -23,8 +25,8 @@ public class AffilationTypeService {
         return repository.findAll();
     }
 
-    public AffilationType getById(Long id) {
-        return repository.findById(id).orElseThrow();
+    public AffilationType getById(Long id) throws EntityNotFoundException {
+        return repository.findById(id).orElseThrow(ExceptionSupplier.affilationTypeNotFoundById(id));
     }
 
     public AffilationType save(AffilationTypeDto dto) {

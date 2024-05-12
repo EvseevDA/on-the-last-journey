@@ -7,6 +7,9 @@ import java.util.List;
 
 public class ServiceOrderMapper {
 
+    private ServiceOrderMapper() {
+    }
+
     public static ServiceOrderDto toDto(ServiceOrder serviceInOrder) {
         return new ServiceOrderDto(
                 serviceInOrder.getPk().getService(),

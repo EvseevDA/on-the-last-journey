@@ -7,6 +7,9 @@ import java.util.List;
 
 public class FuneralAffilationMapper {
 
+    private FuneralAffilationMapper() {
+    }
+
     public static FuneralAffilationDto toDto(FuneralAffilation funeralAffilation) {
         return new FuneralAffilationDto(
                 funeralAffilation.getProvider(),

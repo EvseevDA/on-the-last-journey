@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.onthelastjourney.backend.dto.FuneralAffilationDto;
 import ru.onthelastjourney.backend.entity.FuneralAffilation;
 import ru.onthelastjourney.backend.service.FuneralAffilationService;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
 
 import java.util.List;
 
@@ -26,9 +27,10 @@ public class FuneralAffilationController {
         return ResponseEntity.ok(service.getAll());
     }
 
-    @GetMapping("/api/{funeralAffilationId}")
+    @GetMapping("/{funeralAffilationId}")
     public ResponseEntity<FuneralAffilation>
-    getById(@PathVariable(name = "funeralAffilationId") Long funeralAffilationId) {
+    getById(@PathVariable(name = "funeralAffilationId") Long funeralAffilationId)
+            throws EntityNotFoundException {
         return ResponseEntity.ok(service.getById(funeralAffilationId));
     }
 

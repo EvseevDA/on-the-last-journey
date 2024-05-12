@@ -7,6 +7,9 @@ import java.util.List;
 
 public class ServiceMapper {
 
+    private ServiceMapper() {
+    }
+
     public static ServiceDto toDto(Service service) {
         return new ServiceDto(
                 service.getName(),

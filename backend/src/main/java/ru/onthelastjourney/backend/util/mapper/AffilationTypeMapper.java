@@ -7,6 +7,9 @@ import java.util.List;
 
 public class AffilationTypeMapper {
 
+    private AffilationTypeMapper() {
+    }
+
     public static AffilationTypeDto toDto(AffilationType affilationType) {
         return new AffilationTypeDto(
                 affilationType.getCategory(),

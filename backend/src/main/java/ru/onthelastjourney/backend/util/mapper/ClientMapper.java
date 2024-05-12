@@ -7,6 +7,9 @@ import java.util.List;
 
 public class ClientMapper {
 
+    private ClientMapper() {
+    }
+
     public static ClientDto toDto(Client client) {
         return new ClientDto(
                 client.getSurname(),

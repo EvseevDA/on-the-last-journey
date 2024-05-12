@@ -5,6 +5,9 @@ import ru.onthelastjourney.backend.entity.compositepk.OrderEmployeePk;
 
 public class OrderEmployeePkFactory {
 
+    private OrderEmployeePkFactory() {
+    }
+
     public static OrderEmployeePk
     createOrderEmployeePkByOrderIdAndOrderEmployeeDto(Long orderId, OrderEmployeeDto orderEmployeeDto) {
         return new OrderEmployeePk(

@@ -3,8 +3,10 @@ package ru.onthelastjourney.backend.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.onthelastjourney.backend.dto.ServiceDto;
 import ru.onthelastjourney.backend.entity.Service;
-import ru.onthelastjourney.backend.util.mapper.ServiceMapper;
 import ru.onthelastjourney.backend.repository.ServiceRepository;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
+import ru.onthelastjourney.backend.util.exception.ExceptionSupplier;
+import ru.onthelastjourney.backend.util.mapper.ServiceMapper;
 
 import java.util.List;
 
@@ -22,8 +24,8 @@ public class ServiceService {
         return repository.findAll();
     }
 
-    public Service getById(Long id) {
-        return repository.findById(id).orElseThrow();
+    public Service getById(Long id) throws EntityNotFoundException {
+        return repository.findById(id).orElseThrow(ExceptionSupplier.serviceNotFoundById(id));
     }
 
     public Service save(ServiceDto dto) {

@@ -5,6 +5,9 @@ import ru.onthelastjourney.backend.entity.ServiceOrder;
 
 public class ServiceOrderFactory {
 
+    private ServiceOrderFactory() {
+    }
+
     public static ServiceOrder
     createServiceOrderByOrderIdAndServiceOrderDto(Long orderId, ServiceOrderDto serviceOrderDto) {
         return ServiceOrder.builder()

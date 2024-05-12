@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.onthelastjourney.backend.dto.OrderDto;
 import ru.onthelastjourney.backend.entity.Order;
 import ru.onthelastjourney.backend.service.OrderService;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
 
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class OrderController {
     }
 
     @GetMapping("/{orderId}")
-    public ResponseEntity<Order> getById(@PathVariable(name = "orderId") Long orderId) {
+    public ResponseEntity<Order> getById(@PathVariable(name = "orderId") Long orderId) throws EntityNotFoundException {
         return ResponseEntity.ok(service.getById(orderId));
     }
 

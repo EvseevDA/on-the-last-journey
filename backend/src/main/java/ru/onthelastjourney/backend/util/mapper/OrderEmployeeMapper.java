@@ -7,6 +7,9 @@ import java.util.List;
 
 public class OrderEmployeeMapper {
 
+    private OrderEmployeeMapper() {
+    }
+
     public static OrderEmployeeDto toDto(OrderEmployee employeeInOrder) {
         return new OrderEmployeeDto(employeeInOrder.getPk().getEmployee());
     }

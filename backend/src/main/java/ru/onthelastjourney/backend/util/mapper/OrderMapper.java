@@ -7,6 +7,9 @@ import java.util.List;
 
 public class OrderMapper {
 
+    private OrderMapper() {
+    }
+
     public static OrderDto toDto(Order order) {
         return new OrderDto(
                 order.getClient(),

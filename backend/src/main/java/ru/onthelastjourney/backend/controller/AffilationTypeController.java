@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.onthelastjourney.backend.dto.AffilationTypeDto;
 import ru.onthelastjourney.backend.entity.AffilationType;
 import ru.onthelastjourney.backend.service.AffilationTypeService;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class AffilationTypeController {
 
     @GetMapping("/{affilationTypeId}")
     public ResponseEntity<AffilationType>
-    getById(@PathVariable(name = "affilationTypeId") Long affilationTypeId) {
+    getById(@PathVariable(name = "affilationTypeId") Long affilationTypeId) throws EntityNotFoundException {
         return ResponseEntity.ok(service.getById(affilationTypeId));
     }
 

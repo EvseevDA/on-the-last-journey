@@ -5,6 +5,9 @@ import ru.onthelastjourney.backend.entity.compositepk.ServiceOrderPk;
 
 public class ServiceOrderPkFactory {
 
+    private ServiceOrderPkFactory() {
+    }
+
     public static ServiceOrderPk
     createServiceOrderByOrderIdAndServiceOrderDto(Long orderId, ServiceOrderDto serviceOrderDto) {
         return new ServiceOrderPk(

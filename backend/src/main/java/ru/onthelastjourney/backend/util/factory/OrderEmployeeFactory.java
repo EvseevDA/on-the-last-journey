@@ -5,6 +5,9 @@ import ru.onthelastjourney.backend.entity.OrderEmployee;
 
 public class OrderEmployeeFactory {
 
+    OrderEmployeeFactory() {
+    }
+
     public static OrderEmployee createOrderEmployeeByOrderIdAndOrderEmployeeDto(Long orderId, OrderEmployeeDto orderEmployeeDto) {
         return OrderEmployee.builder()
                 .pk(

@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import ru.onthelastjourney.backend.entity.Employee;
 
+import java.util.Optional;
+
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
@@ -12,6 +14,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
             value = "SELECT * FROM funeralservice.employees e WHERE e.id = (SELECT boss_id FROM funeralservice.employees e WHERE e.id = ?)",
             nativeQuery = true
     )
-    Employee getEmployeeBossByEmployeeId(Long employeeId);
+    Optional<Employee> getEmployeeBossByEmployeeId(Long employeeId);
 
 }

@@ -7,6 +7,9 @@ import java.util.List;
 
 public class EmployeeMapper {
 
+    private EmployeeMapper() {
+    }
+
     public static EmployeeDto toDto(Employee employee) {
         return new EmployeeDto(
                 employee.getSurname(),

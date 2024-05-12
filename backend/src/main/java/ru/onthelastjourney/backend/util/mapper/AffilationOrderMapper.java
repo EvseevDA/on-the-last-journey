@@ -7,6 +7,9 @@ import java.util.List;
 
 public class AffilationOrderMapper {
 
+    private AffilationOrderMapper() {
+    }
+
     public static AffilationOrderDto toDto(AffilationOrder affilationInOrder) {
         return new AffilationOrderDto(
                 affilationInOrder.getPk().getAffilation(),

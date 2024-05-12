@@ -7,6 +7,9 @@ import java.util.List;
 
 public class ProviderMapper {
 
+    private ProviderMapper() {
+    }
+
     public static ProviderDto toDto(Provider provider) {
         return new ProviderDto(
                 provider.getName(),
