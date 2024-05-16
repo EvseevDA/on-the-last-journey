@@ -27,7 +27,7 @@ public class EntityNotFoundException extends ApplicationException {
             return this;
         }
 
-        public <V> MessageBuilder withParamNameAndValue(String paramName, V paramValue) {
+        public <PV> MessageBuilder withParamNameAndValue(String paramName, PV paramValue) {
             messageBuilder.append(String.format("with {%s=%s} ", paramName, paramValue));
 
             return this;

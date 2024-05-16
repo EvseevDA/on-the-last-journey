@@ -12,7 +12,7 @@ import ru.onthelastjourney.backend.util.mapper.FuneralAffilationMapper;
 import java.util.List;
 
 @Service
-public class FuneralAffilationService {
+public class FuneralAffilationService extends AbstractService {
 
     private final FuneralAffilationRepository repository;
 

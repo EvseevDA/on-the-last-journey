@@ -11,9 +11,9 @@ import java.util.Optional;
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query(
-            value = "SELECT * FROM funeralservice.employees e WHERE e.id = (SELECT boss_id FROM funeralservice.employees e WHERE e.id = ?)",
+            value = "SELECT * FROM funeralservice.employee e WHERE e.id = (SELECT boss_id FROM funeralservice.employees e WHERE e.id = ?)",
             nativeQuery = true
     )
-    Optional<Employee> getEmployeeBossByEmployeeId(Long employeeId);
+    Optional<Employee> findEmployeeBossByEmployeeId(Long id);
 
 }

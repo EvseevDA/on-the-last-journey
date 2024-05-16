@@ -12,7 +12,7 @@ import ru.onthelastjourney.backend.util.mapper.EmployeeMapper;
 import java.util.List;
 
 @Service
-public class EmployeeService {
+public class EmployeeService extends AbstractService {
 
     private final EmployeeRepository repository;
 
@@ -32,7 +32,7 @@ public class EmployeeService {
     public EmployeeDto getEmployeeBossByEmployeeId(Long id) throws EntityNotFoundException {
         return EmployeeMapper
                 .toDto(
-                        repository.getEmployeeBossByEmployeeId(id).orElseThrow(ExceptionSupplier.employeeNotFoundById(id))
+                        repository.findEmployeeBossByEmployeeId(id).orElseThrow(ExceptionSupplier.employeeNotFoundById(id))
                 );
     }
 

@@ -12,7 +12,7 @@ import ru.onthelastjourney.backend.util.mapper.ProviderMapper;
 import java.util.List;
 
 @Service
-public class ProviderService {
+public class ProviderService extends AbstractService {
 
     private final ProviderRepository repository;
 

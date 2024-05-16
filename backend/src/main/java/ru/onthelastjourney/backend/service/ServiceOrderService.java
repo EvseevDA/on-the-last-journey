@@ -4,14 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.onthelastjourney.backend.dto.ServiceOrderDto;
 import ru.onthelastjourney.backend.repository.ServiceOrderRepository;
-import ru.onthelastjourney.backend.util.factory.ServiceOrderFactory;
-import ru.onthelastjourney.backend.util.factory.ServiceOrderPkFactory;
 import ru.onthelastjourney.backend.util.mapper.ServiceOrderMapper;
 
 import java.util.List;
 
 @Service
-public class ServiceOrderService {
+public class ServiceOrderService extends AbstractService {
 
     private final ServiceOrderRepository repository;
 
@@ -21,35 +19,27 @@ public class ServiceOrderService {
     }
 
     public List<ServiceOrderDto> getAllByOrderId(Long id) {
-        return ServiceOrderMapper.toDto(repository.findAllWhereOrderIdIs(id));
+        return ServiceOrderMapper.toDto(repository.findAllByOrderId(id));
     }
 
     public ServiceOrderDto addServiceToOrderWithId(Long id, ServiceOrderDto dto) {
-        return ServiceOrderMapper.toDto(
-                repository.save(
-                        ServiceOrderFactory.createServiceOrderByOrderIdAndServiceOrderDto(id, dto)
-                )
-        );
+        repository.saveByDbFields(id, dto.getService().getId(), dto.getPrice(), dto.getPercentDiscount());
+
+        return dto;
     }
 
     public ServiceOrderDto updateServiceFromOrderWithId(Long id, ServiceOrderDto dto) {
-        return ServiceOrderMapper.toDto(
-                repository.save(
-                        ServiceOrderFactory.createServiceOrderByOrderIdAndServiceOrderDto(id, dto)
-                )
-        );
+        repository.updateByDbFields(id, dto.getService().getId(), dto.getPrice(), dto.getPercentDiscount());
+
+        return dto;
     }
 
     public void deleteServiceFromOrderWithId(Long id, ServiceOrderDto dto) {
-        repository.deleteById(
-                ServiceOrderPkFactory.createServiceOrderByOrderIdAndServiceOrderDto(id, dto)
-        );
+        repository.deleteByOrderIdAndServiceId(id, dto.getService().getId());
     }
 
     public void deleteServiceFromOrderByOrderIdAndServiceId(Long orderId, Long serviceId) {
-        repository.deleteById(
-                ServiceOrderPkFactory.createServiceOrderPkByOrderIdAndServiceId(orderId, serviceId)
-        );
+        repository.deleteByOrderIdAndServiceId(orderId, serviceId);
     }
 
 }

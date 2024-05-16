@@ -12,7 +12,7 @@ import ru.onthelastjourney.backend.util.mapper.AffilationTypeMapper;
 import java.util.List;
 
 @Service
-public class AffilationTypeService {
+public class AffilationTypeService extends AbstractService {
 
     private final AffilationTypeRepository repository;
 

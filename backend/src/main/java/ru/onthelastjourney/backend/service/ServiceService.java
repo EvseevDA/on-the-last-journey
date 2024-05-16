@@ -11,7 +11,7 @@ import ru.onthelastjourney.backend.util.mapper.ServiceMapper;
 import java.util.List;
 
 @org.springframework.stereotype.Service
-public class ServiceService {
+public class ServiceService extends AbstractService {
 
     private final ServiceRepository repository;
 
