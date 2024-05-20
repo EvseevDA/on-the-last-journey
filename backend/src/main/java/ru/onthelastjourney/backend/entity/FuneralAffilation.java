@@ -1,6 +1,5 @@
 package ru.onthelastjourney.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,7 +12,6 @@ import java.math.BigDecimal;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class FuneralAffilation {
 
     @Id
@@ -23,20 +21,16 @@ public class FuneralAffilation {
 
     @ManyToOne(
             targetEntity = Provider.class,
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.MERGE
     )
     @JoinColumn(name = "provider_id", referencedColumnName = "id")
-    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private Provider provider;
 
     @ManyToOne(
             targetEntity = AffilationType.class,
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.MERGE
     )
     @JoinColumn(name = "type_id", referencedColumnName = "id")
-    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private AffilationType affilationType;
 
     @Column(name = "unit")

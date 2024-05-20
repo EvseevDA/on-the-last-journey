@@ -15,34 +15,34 @@ public class EntityNotFoundException extends ApplicationException {
 
     public static class MessageBuilder {
 
-        private final StringBuilder messageBuilder;
+        private final StringBuilder messageBlank;
 
-        public MessageBuilder() {
-            messageBuilder = new StringBuilder();
+        private MessageBuilder() {
+            messageBlank = new StringBuilder();
         }
 
         public MessageBuilder entity(String entityName) {
-            messageBuilder.append(entityName).append(' ');
+            messageBlank.append(entityName).append(' ');
 
             return this;
         }
 
         public <PV> MessageBuilder withParamNameAndValue(String paramName, PV paramValue) {
-            messageBuilder.append(String.format("with {%s=%s} ", paramName, paramValue));
+            messageBlank.append(String.format("with {%s=%s} ", paramName, paramValue));
 
             return this;
         }
 
         public MessageBuilder and() {
-            messageBuilder.append("and ");
+            messageBlank.append("and ");
 
             return this;
         }
 
         public String notFound() {
-            messageBuilder.append("not found");
+            messageBlank.append("not found");
 
-            return messageBuilder.toString();
+            return messageBlank.toString();
         }
 
     }

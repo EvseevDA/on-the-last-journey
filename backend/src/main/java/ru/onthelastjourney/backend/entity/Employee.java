@@ -1,6 +1,5 @@
 package ru.onthelastjourney.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Employee {
 
     @Id

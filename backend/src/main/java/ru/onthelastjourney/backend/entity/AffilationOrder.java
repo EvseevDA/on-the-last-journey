@@ -19,6 +19,7 @@ import java.math.BigDecimal;
 public class AffilationOrder {
 
     @EmbeddedId
+    @EqualsAndHashCode.Include
     private AffilationOrderPk pk;
 
     @Column(name = "price")

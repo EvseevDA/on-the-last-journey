@@ -42,7 +42,7 @@ public class FuneralAffilationService extends AbstractService {
     }
 
     public void delete(FuneralAffilation funeralAffilation) {
-        repository.delete(funeralAffilation);
+        repository.deleteById(funeralAffilation.getId());
     }
 
     public void deleteById(Long id) {

@@ -3,6 +3,7 @@ package ru.onthelastjourney.backend.util.exception.handler;
 import org.postgresql.util.PSQLException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
@@ -26,6 +27,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(NullPointerException.class)
     public ResponseEntity<ExceptionResponseBody> handleNullPointerException(NullPointerException e) {
         return responseEntityWithInternalServerError(e);
+    }
+
+    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
+    public ResponseEntity<ExceptionResponseBody>
+    handleHttpMethodNotSupportedException(HttpRequestMethodNotSupportedException e) {
+        return buildResponseEntity(HttpStatus.METHOD_NOT_ALLOWED, e);
     }
 
     private ResponseEntity<ExceptionResponseBody>

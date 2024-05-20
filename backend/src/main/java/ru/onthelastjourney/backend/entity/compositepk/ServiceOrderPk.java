@@ -1,6 +1,9 @@
 package ru.onthelastjourney.backend.entity.compositepk;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,16 +20,14 @@ public class ServiceOrderPk implements Serializable {
 
     @ManyToOne(
             targetEntity = Order.class,
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.MERGE
     )
     @JoinColumn(name = "order_id")
     private Order order;
 
     @ManyToOne(
             targetEntity = Service.class,
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.LAZY
+            cascade = CascadeType.MERGE
     )
     @JoinColumn(name = "service_id")
     private Service service;

@@ -1,6 +1,5 @@
 package ru.onthelastjourney.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Order {
 
     @Id
@@ -23,8 +21,7 @@ public class Order {
 
     @ManyToOne(
             targetEntity = Client.class,
-            cascade = CascadeType.MERGE,
-            fetch = FetchType.EAGER
+            cascade = CascadeType.MERGE
     )
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private Client client;

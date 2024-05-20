@@ -42,7 +42,7 @@ public class OrderService extends AbstractService {
     }
 
     public void delete(Order order) {
-        repository.delete(order);
+        repository.deleteById(order.getId());
     }
 
     public void deleteById(Long id) {
