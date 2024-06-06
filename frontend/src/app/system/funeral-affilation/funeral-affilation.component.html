@@ -1,0 +1,43 @@
+<div class="search">
+  <h3>Поиск заказа</h3>
+  <div>
+    <label for="ids">id</label>
+    <select id="ids" [(ngModel)]="selectedAffilationId">
+      <option [value]="affilation.id" *ngFor="let affilation of affilations"> {{ affilation.id }} </option>
+    </select>
+  </div>
+  <button (click)="getSingletonAffilation(selectedAffilationId)">Перейти к принадлежности</button>
+</div>
+
+<div class="table">
+  <table>
+    <caption>Похоронные принадлежности</caption>
+    <thead>
+    <tr>
+      <th>Поставщик</th>
+      <th colspan="1">Категория</th>
+      <th colspan="0">Название</th>
+      <th colspan="0">Цена</th>
+      <th colspan="0">На складе</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let affilation of affilations">
+      <td>{{ affilation.provider.name }}</td>
+      <td> {{ affilation.affilationType.category }} </td>
+      <td> {{ affilation.name }} </td>
+      <td> {{ affilation.price }} </td>
+      <td> {{ affilation.inStorage }} </td>
+      <td>
+        <button (click)="getSingletonAffilation(affilation.id)">Детали</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a [routerLink]="['./new/addition']">Добавить принадлженость</a>
+  </div>
+  <div>
+    <a [routerLink]="['../']">Вернуться назад</a>
+  </div>
+</div>

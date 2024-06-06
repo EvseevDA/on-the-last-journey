@@ -1,0 +1,48 @@
+<div>
+  <a [routerLink]="['../../']">Вернуться назад</a>
+</div>
+
+<div [formGroup]="form">
+
+  <div>
+    <label for="surname">Фамилия</label>
+    <input type="text" id="surname" formControlName="surname">
+  </div>
+
+  <div>
+    <label for="name">Имя</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+
+  <div>
+    <label for="patronymic">Отчество</label>
+    <input type="text" id="patronymic" formControlName="patronymic">
+  </div>
+
+  <div>
+    <label for="country">Страна</label>
+    <input type="text" id="country" formControlName="country">
+  </div>
+
+  <div>
+    <label for="region">Область</label>
+    <input type="text" id="region" formControlName="region">
+  </div>
+
+  <div>
+    <label for="city">Город</label>
+    <input type="text" id="city" formControlName="city">
+  </div>
+
+  <div>
+    <label for="phoneNumber">Телефон</label>
+    <input type="text" id="phoneNumber" formControlName="phoneNumber">
+  </div>
+
+  <div>
+    <label for="index">Индекс</label>
+    <input type="number" id="index" formControlName="index">
+  </div>
+
+  <button [disabled]="!form.valid" (click)="submit()">Сохранить</button>
+</div>

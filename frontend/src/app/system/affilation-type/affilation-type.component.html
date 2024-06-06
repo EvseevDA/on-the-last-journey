@@ -1,0 +1,20 @@
+<div class="table">
+  <table>
+    <caption>Типы принадлежностей</caption>
+    <thead>
+    <tr>
+      <th>Категория</th>
+      <th colspan="1">Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let type of affilationTypes">
+      <td>{{ type.category }}</td>
+      <td> {{ type.description }} </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a [routerLink]="['../']">Вернуться назад</a>
+  </div>
+</div>

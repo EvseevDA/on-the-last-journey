@@ -1,0 +1,86 @@
+<div *ngIf="instance && !editingMode" class="table">
+  <table>
+    <caption>Клиент №{{ instance?.id }}</caption>
+    <thead>
+    <tr>
+      <th>Фамилия</th>
+      <th colspan="1">Имя</th>
+      <th colspan="0">Отчество</th>
+      <th colspan="0">Страна</th>
+      <th colspan="0">Область</th>
+      <th colspan="0">Город</th>
+      <th colspan="0">Телефон</th>
+      <th colspan="0">Индекс</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ instance?.surname }}</td>
+      <td> {{ instance?.name }} </td>
+      <td> {{ instance?.patronymic }} </td>
+      <td> {{ instance?.country }} </td>
+      <td> {{ instance?.region }} </td>
+      <td> {{ instance?.city }} </td>
+      <td> {{ instance?.phoneNumber }} </td>
+      <td> {{ instance?.index }} </td>
+      <td>
+        <button (click)="edit()">Изменить</button>
+      </td>
+      <td>
+        <button class="b2" (click)="deleteById(instance.id)">Удалить</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="form" [formGroup]="form" *ngIf="editingMode">
+
+  <div>
+    <label for="edit-surname">Фамилия</label>
+    <input id="edit-surname" formControlName="surname">
+  </div>
+
+  <div>
+    <label for="edit-name">Имя</label>
+    <input id="edit-name" formControlName="name">
+  </div>
+
+  <div>
+    <label for="edit-patronymic">Отчество</label>
+    <input id="edit-patronymic" formControlName="patronymic">
+  </div>
+
+  <div>
+    <label for="edit-country">Страна</label>
+    <input id="edit-country" formControlName="country">
+  </div>
+
+  <div>
+    <label for="edit-region">Область</label>
+    <input id="edit-region" formControlName="region">
+  </div>
+
+  <div>
+    <label for="edit-city">Город</label>
+    <input id="edit-city" formControlName="city">
+  </div>
+
+  <div>
+    <label for="edit-phone">Телефон</label>
+    <input id="edit-phone" formControlName="phoneNumber">
+  </div>
+
+  <div>
+    <label for="edit-index">Индекс</label>
+    <input type="tel" id="edit-index" formControlName="index">
+  </div>
+
+  <button (click)="cancelEditing()">Отмена</button>
+  <button (click)="submit()">Сохранить</button>
+</div>
+
+<div>
+  <p *ngIf="!instance">Клиент не найден</p>
+  <a [routerLink]="['../']">Вернуться к списку клиентов</a>
+</div>

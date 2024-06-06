@@ -1,0 +1,62 @@
+<div>
+  <a [routerLink]="['../../']">Вернуться назад</a>
+</div>
+
+<div class="form" [formGroup]="form">
+
+  <div>
+    <label for="provider">Поставщик</label>
+    <select id="provider" [(ngModel)]="selectedProviderId" [ngModelOptions]="{standalone: true}" >
+      <option [value]="provider.id" *ngFor="let provider of providers"> {{ provider.name }} </option>
+    </select>
+  </div>
+
+  <div>
+    <label for="type">Тип</label>
+    <select id="type" [(ngModel)]="selectedTypeId" [ngModelOptions]="{standalone: true}" >
+      <option [value]="type.id" *ngFor="let type of types"> {{ type.category }} </option>
+    </select>
+  </div>
+
+  <div>
+    <label for="unit">Единица измерения</label>
+    <input type="text" id="unit" formControlName="unit">
+  </div>
+
+  <div>
+    <label for="price">Цена</label>
+    <input type="number" id="price" formControlName="price">
+  </div>
+
+  <div>
+    <label for="in-storage">На складе</label>
+    <input type="text" id="in-storage" formControlName="inStorage">
+  </div>
+
+  <div>
+    <label for="expected">Ожидается</label>
+    <input type="number" id="expected" formControlName="expected">
+  </div>
+
+  <div>
+    <label for="supplies-stopped">Поставки прекращены</label>
+    <input type="checkbox" id="supplies-stopped" formControlName="suppliesStopped">
+  </div>
+
+  <div>
+    <label for="photo-url">Ссылка на фото</label>
+    <input type="text" id="photo-url" formControlName="photoUrl">
+  </div>
+
+  <div>
+    <label for="name">Название</label>
+    <input type="text" id="name" formControlName="name">
+  </div>
+
+  <div>
+    <label for="description">Описание</label>
+    <input type="text" id="description" formControlName="description">
+  </div>
+
+  <button (click)="submit()">Сохранить</button>
+</div>

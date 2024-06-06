@@ -41,18 +41,18 @@ public class ServiceOrderController {
     }
 
     @DeleteMapping
-    public HttpStatus deleteServiceFromOrderWithId(
-            @PathVariable(name = "orderId") Long orderId,
-            @RequestBody ServiceOrderDto serviceOrderDto) {
+    public HttpStatus
+    deleteServiceFromOrderWithId(@PathVariable(name = "orderId") Long orderId,
+                                 @RequestBody ServiceOrderDto serviceOrderDto) {
         service.deleteServiceFromOrderWithId(orderId, serviceOrderDto);
 
         return HttpStatus.OK;
     }
 
     @DeleteMapping("/{serviceId}")
-    public HttpStatus deleteServiceFromOrderByOrderIdAndServiceId(
-            @PathVariable(name = "orderId") Long orderId,
-            @PathVariable(name = "serviceId") Long serviceId) {
+    public HttpStatus
+    deleteServiceFromOrderByOrderIdAndServiceId(@PathVariable(name = "orderId") Long orderId,
+                                                @PathVariable(name = "serviceId") Long serviceId) {
         service.deleteServiceFromOrderByOrderIdAndServiceId(orderId, serviceId);
 
         return HttpStatus.OK;

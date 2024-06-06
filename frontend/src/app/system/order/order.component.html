@@ -1,0 +1,41 @@
+<div class="search">
+  <h3>Поиск заказа</h3>
+  <div>
+    <label for="ids">id</label>
+    <select id="ids" [(ngModel)]="selectedOrderId">
+      <option [value]="order.id" *ngFor="let order of orders"> {{ order.id }} </option>
+    </select>
+  </div>
+  <button (click)="getSingletonOrder(selectedOrderId)">Перейти к заказу</button>
+</div>
+
+<div class="table">
+  <table>
+    <caption>Заказы</caption>
+    <thead>
+    <tr>
+      <th>Клиент</th>
+      <th colspan="1">Дата регистрации</th>
+      <th colspan="0">Дата назначения</th>
+      <th colspan="0">Дата исполнения</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.client.surname + ' ' + order.client.name }}</td>
+      <td> {{ util.fixDate(order.registrationDate) }} </td>
+      <td> {{ util.fixDate(order.appointmentDate) }} </td>
+      <td> {{ util.fixDate(order.executionDate) }} </td>
+      <td>
+        <button (click)="getSingletonOrder(order.id)">Детали</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a [routerLink]="['./new/addition']">Добавить заказ</a>
+  </div>
+  <div>
+    <a [routerLink]="['../']">Вернуться назад</a>
+  </div>
+</div>

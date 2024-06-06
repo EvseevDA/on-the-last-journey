@@ -13,7 +13,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     @Query(
             value = "SELECT * " +
-                    "FROM funeralservice.employee e " +
+                    "FROM funeralservice.employees e " +
                     "WHERE e.id = (SELECT boss_id FROM funeralservice.employees e WHERE e.id = :id)",
             nativeQuery = true
     )

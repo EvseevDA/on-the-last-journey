@@ -1,0 +1,32 @@
+<div class="table">
+  <table>
+    <caption>Поставщики</caption>
+    <thead>
+    <tr>
+      <th>Название</th>
+      <th colspan="1">Обращаться к</th>
+      <th colspan="1">Должность</th>
+      <th colspan="1">Страна</th>
+      <th colspan="1">Область</th>
+      <th colspan="1">Город</th>
+      <th colspan="1">Индекс</th>
+      <th colspan="1">Телефон</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let provider of providers">
+      <td>{{ provider.name }}</td>
+      <td> {{ provider.speakTo }} </td>
+      <td> {{ provider.jobTitle }} </td>
+      <td> {{ provider.country }} </td>
+      <td> {{ provider.region }} </td>
+      <td> {{ provider.city }} </td>
+      <td> {{ provider.index }} </td>
+      <td> {{ provider.phoneNumber }} </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <a [routerLink]="['../']">Вернуться назад</a>
+  </div>
+</div>
