@@ -37,6 +37,20 @@ public final class ExceptionSupplier {
         return entityNotFoundById("Service", id);
     }
 
+    public static Supplier<EntityNotFoundException> userNotFoundById(Long id) {
+        return entityNotFoundById("User", id);
+    }
+
+    public static Supplier<EntityNotFoundException> userNotFoundByLogin(String login) {
+        return () -> ApplicationExceptionFactory.EntityNotFound.byParam("User", "login", login);
+    }
+
+    public static Supplier<EntityNotFoundException> userNotFoundByLoginAndPassword(String login, String password) {
+        return () -> ApplicationExceptionFactory.EntityNotFound.byParams("User",
+                "login", login,
+                "password", password);
+    }
+
     private static <ID> Supplier<EntityNotFoundException> entityNotFoundById(String entityName, ID id) {
         return () -> ApplicationExceptionFactory.EntityNotFound.byId(entityName, id);
     }

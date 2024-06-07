@@ -23,4 +23,15 @@ export class Util {
 
     return dateArray;
   }
+
+  public crosses(left: string[], right: string[]): boolean {
+    for (const leftItem of left) {
+      for (const rightItem of right) {
+        if (leftItem == rightItem) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }

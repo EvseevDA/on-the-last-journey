@@ -5,11 +5,9 @@ import {OrderRoutingModule} from "./order-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
-import {HttpClientModule} from "@angular/common/http";
-import { SingletonOrderComponent } from './singleton-order/singleton-order.component';
-import {ClientService} from "../service/client.service";
+import {SingletonOrderComponent} from './singleton-order/singleton-order.component';
 import {ClientModule} from "../client/client.module";
-import { OrderAdditionComponent } from './order-addition/order-addition.component';
+import {OrderAdditionComponent} from './order-addition/order-addition.component';
 
 @NgModule({
   imports: [

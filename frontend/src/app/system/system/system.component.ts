@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-system',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class SystemComponent {
 
+  constructor(private router: Router) {
+  }
+
+  public logout(): void {
+    window.sessionStorage.clear();
+    this.router.navigate(['/']);
+  }
+
+  protected readonly window = window;
 }

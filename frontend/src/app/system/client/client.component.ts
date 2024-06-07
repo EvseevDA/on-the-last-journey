@@ -20,15 +20,15 @@ export class ClientComponent implements OnInit {
   public selectedClientId: number = 0;
 
   public getSingletonClient(id: number | undefined): void {
-    this.router.navigate([`${id}`], { relativeTo: this.route })
+    this.router.navigate([`${id}`], {relativeTo: this.route})
   }
 
   ngOnInit(): void {
     this.clientService.getAllClients()
       .subscribe(cs => {
-      cs.forEach(c => this.clients.push(c));
-    });
-    this.selectedClientId = this.clients[0].id;
+        cs.forEach(c => this.clients.push(c));
+        this.selectedClientId = this.clients[0].id;
+      });
   }
 
 }

@@ -7,9 +7,7 @@ import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 import {FooterComponent} from './common-component/footer/footer.component';
 import {ErrorComponent} from './error/error/error.component';
 import {AppRoutingModule} from "./app-routing.module";
-import { SystemComponent } from './system/system/system.component';
-import { ClientComponent } from './system/client/client.component';
-import { HomePageComponent } from './home-page/home-page/home-page.component';
+import {HomePageComponent} from './home-page/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +15,7 @@ import { HomePageComponent } from './home-page/home-page/home-page.component';
     NavigationComponent,
     FooterComponent,
     ErrorComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

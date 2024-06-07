@@ -4,7 +4,9 @@ import {Observable} from "rxjs";
 import {Client} from "../model/client";
 import {ClientDto} from "../model/client-dto";
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class ClientService {
 
   private readonly SOURCE_URL: string = 'http://localhost:8081/api/clients'

@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {ClientComponent} from "./client/client.component";
+import {RouterModule, Routes} from '@angular/router';
 import {SystemComponent} from "./system/system.component";
-import {SingletonClientComponent} from "./client/singleton-client/singleton-client.component";
+import {RoleGuard} from "../role-guard/role-guard";
 
 const routes: Routes = [
   {
@@ -28,6 +27,11 @@ const routes: Routes = [
   {
     path: 'funeral-affilation',
     loadChildren: () => import('./funeral-affilation/funeral-affilation.module').then(m => m.FuneralAffilationModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule),
+    canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }
   }
 ]
 

@@ -1,21 +1,24 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {FuneralAffilationComponent} from "./funeral-affilation.component";
 import {SingletonAffilationComponent} from "./singleton-affilation/singleton-affilation.component";
 import {AffilationAdditionComponent} from "./affilation-addition/affilation-addition.component";
+import {RoleGuard} from "../../role-guard/role-guard";
 
 const routes: Routes = [
   {
     path: '',
-    component: FuneralAffilationComponent
+    component: FuneralAffilationComponent,
   },
   {
     path: ':id',
-    component: SingletonAffilationComponent
+    component: SingletonAffilationComponent,
+    canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }
   },
   {
     path: 'new/addition',
-    component: AffilationAdditionComponent
+    component: AffilationAdditionComponent,
+    canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }
   }
 ]
 

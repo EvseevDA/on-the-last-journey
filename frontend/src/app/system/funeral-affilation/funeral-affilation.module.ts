@@ -9,7 +9,7 @@ import {FuneralAffilationService} from "../service/funeral-affilation.service";
 import {SingletonAffilationComponent} from './singleton-affilation/singleton-affilation.component';
 import {ProviderModule} from "../provider/provider.module";
 import {AffilationTypeModule} from "../affilation-type/affilation-type.module";
-import { AffilationAdditionComponent } from './affilation-addition/affilation-addition.component';
+import {AffilationAdditionComponent} from './affilation-addition/affilation-addition.component';
 
 @NgModule({
   imports: [

@@ -32,8 +32,7 @@ export class OrderComponent implements OnInit {
         os.forEach(o => {
           this.orders.push(o)
         });
+        this.selectedOrderId = this.orders[0].id;
       });
-    this.selectedOrderId = this.orders[0].id;
   }
-
 }

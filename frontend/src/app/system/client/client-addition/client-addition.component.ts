@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ClientService} from "../../service/client.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ClientDto} from "../../model/client-dto";
@@ -63,7 +63,7 @@ export class ClientAdditionComponent {
         index: this.form.value.index as number
       }
       this.clientService.addClient(clientDto)
-        .subscribe(c => {
+        .subscribe(_ => {
           alert("Клиент добавлен. Вы будете перенапрвлены на страницу с клиентами");
           this.router.navigate(['../../'], { relativeTo: this.route });
         })

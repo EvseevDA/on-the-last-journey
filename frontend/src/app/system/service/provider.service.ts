@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Provider} from "../model/provider";
@@ -15,4 +15,5 @@ export class ProviderService {
   public getAllProviders(): Observable<Provider[]> {
     return this.http.get<Provider[]>(this.SOURCE_URL);
   }
+
 }

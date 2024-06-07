@@ -5,5 +5,7 @@
     <li><a [routerLink]="['affilation-type']">Типы принадлежностей</a></li>
     <li><a [routerLink]="['provider']">Поставщики</a></li>
     <li><a [routerLink]="['funeral-affilation']">Похоронные принадлежности</a></li>
+    <li><a [routerLink]="['user']">Пользователи</a></li>
+    <li *ngIf="window.sessionStorage.getItem('user')" (click)="logout()"><a>Выйти из аккаунта</a></li>
   </ul>
 </nav>

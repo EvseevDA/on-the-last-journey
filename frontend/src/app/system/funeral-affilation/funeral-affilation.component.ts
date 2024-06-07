@@ -29,7 +29,7 @@ export class FuneralAffilationComponent implements OnInit {
         as.forEach(a => {
           this.affilations.push(a)
         });
+        this.selectedAffilationId = this.affilations[0].id;
       });
-    this.selectedAffilationId = this.affilations[0].id;
   }
 }

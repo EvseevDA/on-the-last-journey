@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {AffilationTypeService} from "../service/affilation-type.service";
-import {ActivatedRoute, Router} from "@angular/router";
 import {AffilationType} from "../model/affilation-type";
 
 @Component({

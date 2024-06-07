@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {ClientComponent} from "./client.component";
 import {SingletonClientComponent} from "./singleton-client/singleton-client.component";
 import {ClientAdditionComponent} from "./client-addition/client-addition.component";
+import {RoleGuard} from "../../role-guard/role-guard";
 
 const routes: Routes = [
   {
@@ -11,11 +12,13 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: SingletonClientComponent
+    component: SingletonClientComponent,
+    canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }
   },
   {
     path: 'new/addition',
-    component: ClientAdditionComponent
+    component: ClientAdditionComponent,
+    canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }
   }
 ]
 

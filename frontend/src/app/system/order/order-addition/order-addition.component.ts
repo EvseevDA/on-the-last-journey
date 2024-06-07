@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Client} from "../../model/client";
 import {Order} from "../../model/order";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {OrderService} from "../../service/order.service";
 import {ClientService} from "../../service/client.service";
 import {Util} from "../../../../util/util";
