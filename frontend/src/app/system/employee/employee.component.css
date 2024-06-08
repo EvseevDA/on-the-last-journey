@@ -1,0 +1,29 @@
+.employee-count {
+  display: block;
+  float: left;
+  border: solid black 3px;
+  width: fit-content;
+  background-color: #757575;
+  margin-top: 10px;
+}
+
+.employee-count:hover {
+  display: block;
+  float: left;
+  border: solid black 3px;
+  width: fit-content;
+  background-color: #606060;
+  margin-top: 10px;
+}
+
+.employee-count p {
+  color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+}

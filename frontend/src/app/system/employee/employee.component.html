@@ -1,0 +1,39 @@
+<div class="table">
+  <table>
+    <caption>Числящиеся сотрудники</caption>
+    <thead>
+    <tr>
+      <th colspan="0">Фамилия</th>
+      <th colspan="0">Имя</th>
+      <th colspan="0">Отчество</th>
+      <th colspan="0">Должность</th>
+      <th colspan="0">Дата найма</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.surname }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.patronymic }}</td>
+      <td>{{ employee.jobTitle }}</td>
+      <td>{{ util.fixDate(employee.hireDate) }}</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="additional-info">
+    <div class="employee-count">
+      <p>Общее число сотрудников: {{ employeeCount }}</p>
+    </div>
+    <div class="employee-count" style="float: right">
+      <p>Дата формирования отчета: {{ timestamp }}</p>
+    </div>
+  </div>
+
+  <div class="under-table">
+    <div class="left">
+      <a [routerLink]="['../']">Вернуться назад</a>
+    </div>
+  </div>
+</div>

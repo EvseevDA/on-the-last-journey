@@ -16,6 +16,10 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.SOURCE_URL + '/ordered-by/hire-date');
   }
 
+  public getAllEmployeesOrderedByFullName(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.SOURCE_URL + '/ordered-by/full-name');
+  }
+
   public getTotalEmployeeCount(): Observable<number> {
     return this.http.get<number>(this.SOURCE_URL + '/count')
   }

@@ -29,6 +29,10 @@ const routes: Routes = [
     loadChildren: () => import('./funeral-affilation/funeral-affilation.module').then(m => m.FuneralAffilationModule)
   },
   {
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
+  },
+  {
     path: 'user',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule),
     canActivate: [RoleGuard], data: { roles: ['ROLE_ADMIN'] }

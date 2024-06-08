@@ -29,6 +29,10 @@ public class EmployeeService extends AbstractService {
         return repository.findAllByOrderByHireDate();
     }
 
+    public List<Employee> getAllOrderedByFullName() {
+        return repository.findAllByOrderBySurnameAscNameAscPatronymicAsc();
+    }
+
     public Employee getById(Long id) throws EntityNotFoundException {
         return repository.findById(id).orElseThrow(ExceptionSupplier.employeeNotFoundById(id));
     }

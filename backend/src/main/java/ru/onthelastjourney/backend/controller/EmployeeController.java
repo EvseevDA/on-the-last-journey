@@ -44,6 +44,11 @@ public class EmployeeController {
         return ResponseEntity.ok(service.getAllOrderedByHireDate());
     }
 
+    @GetMapping("/ordered-by/full-name")
+    public ResponseEntity<List<Employee>> getAllOrderedByFullName() {
+        return ResponseEntity.ok(service.getAllOrderedByFullName());
+    }
+
     @GetMapping("/count")
     public ResponseEntity<Long> getCount() {
         return ResponseEntity.ok(service.count());
