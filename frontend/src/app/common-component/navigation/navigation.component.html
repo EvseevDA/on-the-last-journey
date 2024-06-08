@@ -1,7 +1,11 @@
-<nav>
-  <ul>
-    <li><a [routerLink]="['/']">Домашняя страница</a></li>
-    <li><a [routerLink]="['/system']" routerLinkActive="active">Система</a></li>
-    <li *ngIf="!window.sessionStorage.getItem('user')"><a [routerLink]="['/auth']" routerLinkActive="active">Вход</a></li>
-  </ul>
-</nav>
+<div>
+  <nav>
+    <ul>
+      <li><a [routerLink]="['/']">Домашняя страница</a></li>
+      <li><a [routerLink]="['/system']" routerLinkActive="active">Система</a></li>
+      <!--    <li *ngIf="!window.sessionStorage.getItem('user')"><a [routerLink]="['/auth']" routerLinkActive="active">Вход</a></li>-->
+      <li *ngIf="!window.sessionStorage.getItem('user')" style="float: right"><a class="active"
+                                                                                 [routerLink]="['/auth']">Вход</a></li>
+    </ul>
+  </nav>
+</div>

@@ -10,7 +10,6 @@
       <th colspan="0">На складе</th>
       <th colspan="0">Ожидается</th>
       <th colspan="0">Поставки прекращены</th>
-      <th colspan="0">Ссылка на фото</th>
       <th colspan="0">Название</th>
       <th colspan="0">Описание</th>
     </tr>
@@ -24,7 +23,6 @@
       <td> {{ instance.inStorage }} </td>
       <td> {{ instance.expected }} </td>
       <td> {{ instance.suppliesStopped ? 'Да' : 'Нет' }} </td>
-      <td> {{ instance.photoUrl }} </td>
       <td> {{ instance.name }} </td>
       <td> {{ instance.description }} </td>
       <td>
@@ -38,67 +36,83 @@
   </table>
 </div>
 
-<div class="form" [formGroup]="form" *ngIf="editingMode">
+<form class="form" [formGroup]="form" *ngIf="editingMode">
+  <div class="form-inner">
 
-  <div>
-    <label for="provider">Поставщик</label>
-    <select id="provider" [(ngModel)]="selectedProviderId" [ngModelOptions]="{standalone: true}" >
-      <option [value]="provider.id" *ngFor="let provider of providers"> {{ provider.name }} </option>
-    </select>
+    <h3>Похоронная принадлежность</h3>
+
+    <div>
+      <label for="provider">Поставщик</label>
+      <select id="provider" [(ngModel)]="selectedProviderId" [ngModelOptions]="{standalone: true}">
+        <option [value]="provider.id" *ngFor="let provider of providers"> {{ provider.name }} </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="type">Тип</label>
+      <select id="type" [(ngModel)]="selectedTypeId" [ngModelOptions]="{standalone: true}">
+        <option [value]="type.id" *ngFor="let type of types"> {{ type.category }} </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="unit">Единица измерения</label>
+      <input type="text" id="unit" formControlName="unit">
+    </div>
+
+    <div>
+      <label for="price">Цена</label>
+      <input type="number" id="price" formControlName="price">
+    </div>
+
+    <div>
+      <label for="in-storage">На складе</label>
+      <input type="text" id="in-storage" formControlName="inStorage">
+    </div>
+
+    <div>
+      <label for="expected">Ожидается</label>
+      <input type="number" id="expected" formControlName="expected">
+    </div>
+
+    <div style="align-items: center">
+      <label for="supplies-stopped">Поставки прекращены</label>
+      <input class="stopped" type="checkbox" id="supplies-stopped" formControlName="suppliesStopped">
+    </div>
+
+    <div>
+      <label for="photo-url">Ссылка на фото</label>
+      <input type="text" id="photo-url" formControlName="photoUrl">
+    </div>
+
+    <div>
+      <label for="name">Название</label>
+      <input type="text" id="name" formControlName="name">
+    </div>
+
+    <div>
+      <label for="description">Описание</label>
+      <input type="text" id="description" formControlName="description">
+    </div>
+
+    <div class="btns">
+      <div>
+        <button class="action" (click)="submit()">Сохранить</button>
+      </div>
+
+      <div style="float: right">
+        <button class="cancel" (click)="cancelEditing()">Отмена</button>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <label for="type">Тип</label>
-    <select id="type" [(ngModel)]="selectedTypeId" [ngModelOptions]="{standalone: true}" >
-      <option [value]="type.id" *ngFor="let type of types"> {{ type.category }} </option>
-    </select>
+</form>
+<div class="under-table">
+  <div class="left">
+    <p *ngIf="!instance">Принадлежность не найдена</p>
   </div>
 
-  <div>
-    <label for="unit">Единица измерения</label>
-    <input type="text" id="unit" formControlName="unit">
+  <div class="right">
+    <a [routerLink]="['../']">Вернуться к списку принадлежностей</a>
   </div>
-
-  <div>
-    <label for="price">Цена</label>
-    <input type="number" id="price" formControlName="price">
-  </div>
-
-  <div>
-    <label for="in-storage">На складе</label>
-    <input type="text" id="in-storage" formControlName="inStorage">
-  </div>
-
-  <div>
-    <label for="expected">Ожидается</label>
-    <input type="number" id="expected" formControlName="expected">
-  </div>
-
-  <div>
-    <label for="supplies-stopped">Поставки прекращены</label>
-    <input type="checkbox" id="supplies-stopped" formControlName="suppliesStopped">
-  </div>
-
-  <div>
-    <label for="photo-url">Ссылка на фото</label>
-    <input type="text" id="photo-url" formControlName="photoUrl">
-  </div>
-
-  <div>
-    <label for="name">Название</label>
-    <input type="text" id="name" formControlName="name">
-  </div>
-
-  <div>
-    <label for="description">Описание</label>
-    <input type="text" id="description" formControlName="description">
-  </div>
-
-  <button (click)="cancelEditing()">Отмена</button>
-  <button (click)="submit()">Сохранить</button>
-</div>
-
-<div>
-  <p *ngIf="!instance">Принадлежность не найдена</p>
-  <a [routerLink]="['../']">Вернуться к списку принадлежностей</a>
 </div>

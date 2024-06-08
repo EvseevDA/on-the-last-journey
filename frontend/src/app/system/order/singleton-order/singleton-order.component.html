@@ -26,68 +26,87 @@
   </table>
 </div>
 
-<div class="form" [formGroup]="form" *ngIf="editingMode">
+<form class="form" [formGroup]="form" *ngIf="editingMode">
+  <div class="form-inner">
 
-  <div>
-    <label for="client">Клиент</label>
-    <select id="client" [(ngModel)]="selectedClientId" [ngModelOptions]="{standalone: true}" >
-      <option [value]="client.id" *ngFor="let client of clients"> {{ client.surname + ' ' + client.name }} </option>
-    </select>
+    <h3>Заказ</h3>
+
+    <div>
+      <label for="client">Клиент</label>
+      <select id="client" [(ngModel)]="selectedClientId" [ngModelOptions]="{standalone: true}">
+        <option [value]="client.id" *ngFor="let client of clients"> {{ client.surname + ' ' + client.name }} </option>
+      </select>
+    </div>
+
+    <h2>Дата регистрации</h2>
+    <div>
+      <label for="registration-date">День</label>
+      <input type="number" id="registration-date" formControlName="registrationDate">
+    </div>
+
+    <div>
+      <label for="registration-month">Месяц</label>
+      <input type="number" id="registration-month" formControlName="registrationMonth">
+    </div>
+
+    <div>
+      <label for="registration-year">Год</label>
+      <input type="number" id="registration-year" formControlName="registrationYear">
+    </div>
+
+    <h2>Дата назначения</h2>
+    <div>
+      <label for="appointment-date">День</label>
+      <input type="number" id="appointment-date" formControlName="appointmentDate">
+    </div>
+
+    <div>
+      <label for="appointment-month">Месяц</label>
+      <input type="number" id="appointment-month" formControlName="appointmentMonth">
+    </div>
+
+    <div>
+      <label for="appointment-year">Год</label>
+      <input type="number" id="appointment-year" formControlName="appointmentYear">
+    </div>
+
+    <h2>Дата исполнения</h2>
+    <div>
+      <label for="execution-date">День</label>
+      <input type="number" id="execution-date" formControlName="executionDate">
+    </div>
+
+    <div>
+      <label for="execution-month">Месяц</label>
+      <input type="number" id="execution-month" formControlName="executionMonth">
+    </div>
+
+    <div>
+      <label for="execution-year">Год</label>
+      <input type="number" id="execution-year" formControlName="executionYear">
+    </div>
+
+    <div class="btns">
+
+      <div>
+        <button class="action" (click)="submit()">Сохранить</button>
+      </div>
+
+      <div style="float: right">
+        <button class="cancel" (click)="cancelEditing()">Отмена</button>
+      </div>
+
+    </div>
+
+  </div>
+</form>
+
+<div class="under-table">
+  <div class="left">
+    <p *ngIf="!instance">Заказ не найден</p>
   </div>
 
-  <h3>Дата регистрации</h3>
-  <div>
-    <label for="registration-date">День</label>
-    <input type="number" id="registration-date" formControlName="registrationDate">
+  <div class="right">
+    <a [routerLink]="['../']">Вернуться к списку заказов</a>
   </div>
-
-  <div>
-    <label for="registration-month">Месяц</label>
-    <input type="number" id="registration-month" formControlName="registrationMonth">
-  </div>
-
-  <div>
-    <label for="registration-year">Год</label>
-    <input type="number" id="registration-year" formControlName="registrationYear">
-  </div>
-
-  <h3>Дата назначения</h3>
-  <div>
-    <label for="appointment-date">День</label>
-    <input type="number" id="appointment-date" formControlName="appointmentDate">
-  </div>
-
-  <div>
-    <label for="appointment-month">Месяц</label>
-    <input type="number" id="appointment-month" formControlName="appointmentMonth">
-  </div>
-
-  <div>
-    <label for="appointment-year">Год</label>
-    <input type="number" id="appointment-year" formControlName="appointmentYear">
-  </div>
-
-  <h3>Дата исполнения</h3>
-  <div>
-    <label for="execution-date">День</label>
-    <input type="number" id="execution-date" formControlName="executionDate">
-  </div>
-
-  <div>
-    <label for="execution-month">Месяц</label>
-    <input type="number" id="execution-month" formControlName="executionMonth">
-  </div>
-
-  <div>
-    <label for="execution-year">Год</label>
-    <input type="number" id="execution-year" formControlName="executionYear">
-  </div>
-
-  <button (click)="cancelEditing()">Отмена</button>
-  <button (click)="submit()">Сохранить</button>
-</div>
-
-<div>
-  <p *ngIf="!instance">Заказ не найден</p>
-  <a [routerLink]="['../']">Вернуться к списку заказов</a>
 </div>

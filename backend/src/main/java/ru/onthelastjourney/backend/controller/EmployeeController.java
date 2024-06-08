@@ -39,6 +39,16 @@ public class EmployeeController {
         return ResponseEntity.ok(service.getEmployeeBossByEmployeeId(employeeId));
     }
 
+    @GetMapping("/ordered-by/hire-date")
+    public ResponseEntity<List<Employee>> getAllOrderedByHireDate() {
+        return ResponseEntity.ok(service.getAllOrderedByHireDate());
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Long> getCount() {
+        return ResponseEntity.ok(service.count());
+    }
+
     @PostMapping
     public ResponseEntity<Employee>
     save(@RequestBody EmployeeDto employeeDto) {

@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ru.onthelastjourney.backend.entity.Employee;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -18,5 +19,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
             nativeQuery = true
     )
     Optional<Employee> findEmployeeBossByEmployeeId(@Param("id") Long id);
+
+    List<Employee> findAllByOrderByHireDate();
 
 }

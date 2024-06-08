@@ -1,26 +1,194 @@
-label {
-  display: flex;
-  flex-direction: column;
+* {
+  box-sizing: border-box;
 }
 
-input {
-  display: flex;
-  flex-direction: column;
+.search {
+  width: 100px;
 }
+
+.search label {
+  display: block;
+  padding-left: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, .6);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.form {
+  position: relative;
+  max-width: 400px;
+  padding: 60px 50px;
+  margin: 50px auto 0;
+  /*background-image: url(https://html5book.ru/wp-content/uploads/2017/01/photo-roses.jpg);*/
+  background-size: cover;
+}
+
+.form:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right bottom, rgba(43, 44, 78, .5), rgba(104, 22, 96, .5));
+}
+
+.form-inner {
+  position: relative;
+}
+
+.form-inner h3 {
+  position: relative;
+  margin-top: 0;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+h2, .search-title {
+  position: relative;
+  margin-top: 30px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-title {
+  justify-content: left;
+  margin-left: 5px;
+}
+
+.form-inner h3:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 60px;
+  background: #1762EE;
+}
+
+.form-inner label {
+  display: block;
+  padding-left: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255, 255, 255, .6);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.form-inner input, select {
+  display: block;
+  width: 100%;
+  padding: 0 15px;
+  margin: 10px 0 15px;
+  border-width: 0;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+  background: rgba(255, 255, 255, .2);
+  font-family: 'Roboto', sans-serif;
+}
+
+select {
+  height: 40px;
+  width: 100%;
+}
+
+option {
+  color: black;
+  background: rgba(255, 255, 255, .2);
+  font-family: 'Roboto', sans-serif;
+}
+
+select * {
+  border-radius: 15px;
+  background-color: rgb(128, 128, 128);
+}
+
+.btns div {
+  display: inline-block;
+}
+
+.action, .cancel {
+  width: 80px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  background: #0B63F6;
+  box-shadow: 0 5px 0 #003CC5;
+}
+
+.cancel {
+  background-color: #cb0101;
+  box-shadow: 0 5px 0 #980101;
+}
+
+.action:hover, .cancel:hover {
+  background: #003CC5;
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+}
+
+.cancel:hover {
+  background: #980101;
+}
+
+.upper-table {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.under-table {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.under-table .right {
+  margin-left: 30px;
+}
+
+.upper-table a, .under-table a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #0B63F6;
+  border: 1px solid #000; /* В ожидании набирающего популярность темного режима, рамка черного цвета */
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.upper-table a:hover, .under-table a:hover {
+  background: #003CC5;
+}
+
 
 table {
   border-collapse: collapse;
-  border-left: 3px solid #6182f7;
-  border-right: 3px solid #6182f7;
-  border-bottom: 3px solid #6182f7;
+  border-left: 3px solid #333333;
+  border-right: 3px solid #333333;
+  border-bottom: 3px solid #333333;
   font-family: "Lucida Grande", sans-serif;
+  background: #757575;
 }
 table caption {
-  background: #6182f7;
+  background: #333333;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px;
-  box-shadow: 0 2px  4px 0 rgba(0,0,0,.3);
+  /*box-shadow: 0 2px  4px 0 rgba(0,0,0,.3);*/
   color: white;
   font-family: "Roboto Slab",serif;
   font-style: normal;
@@ -35,6 +203,11 @@ table th {
   text-align: left;
   font-size: 18px;
 }
+
+table tr {
+  background: #757575;
+}
+
 table tr:nth-child(2n) {
   background: #E5E5E5;
 }
@@ -44,7 +217,7 @@ table td:last-of-type {
 table button {
   display: inline-block;
   padding: 5px 10px;
-  background: #6182f7;
+  background: #303064;
   position: relative;
 }
 
@@ -56,4 +229,23 @@ table button:hover {
   box-shadow: none;
   top: 2px;
   left: 2px;
+}
+
+.table {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.stopped {
+  width: 20px;
+  height: 20px;
 }

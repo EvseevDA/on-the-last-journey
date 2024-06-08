@@ -25,6 +25,10 @@ public class EmployeeService extends AbstractService {
         return repository.findAll();
     }
 
+    public List<Employee> getAllOrderedByHireDate() {
+        return repository.findAllByOrderByHireDate();
+    }
+
     public Employee getById(Long id) throws EntityNotFoundException {
         return repository.findById(id).orElseThrow(ExceptionSupplier.employeeNotFoundById(id));
     }
@@ -54,5 +58,9 @@ public class EmployeeService extends AbstractService {
 
     public void deleteById(Long id) {
         repository.deleteById(id);
+    }
+
+    public long count() {
+        return repository.count();
     }
 }

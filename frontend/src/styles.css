@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  background-image: url("https://kartinki.pics/pics/uploads/posts/2022-08/1661303676_1-kartinkin-net-p-temnii-monotonnii-fon-krasivo-2.jpg");
+}
+
+body {
+  /*min-height: 500px;*/
+  height: 100vh;
+}
+
+/*app-root {*/
+/*  display: block;*/
+/*  min-height: 100%;*/
+/*}*/

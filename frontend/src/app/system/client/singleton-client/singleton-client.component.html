@@ -34,53 +34,69 @@
   </table>
 </div>
 
-<div class="form" [formGroup]="form" *ngIf="editingMode">
+<form class="form" *ngIf="editingMode" [formGroup]="form">
+  <div class="form-inner">
 
+    <h3>Клиент</h3>
+
+    <div>
+      <label for="edit-surname">Фамилия</label>
+      <input id="edit-surname" formControlName="surname">
+    </div>
+
+    <div>
+      <label for="edit-name">Имя</label>
+      <input id="edit-name" formControlName="name">
+    </div>
+
+    <div>
+      <label for="edit-patronymic">Отчество</label>
+      <input id="edit-patronymic" formControlName="patronymic">
+    </div>
+
+    <div>
+      <label for="edit-country">Страна</label>
+      <input id="edit-country" formControlName="country">
+    </div>
+
+    <div>
+      <label for="edit-region">Область</label>
+      <input id="edit-region" formControlName="region">
+    </div>
+
+    <div>
+      <label for="edit-city">Город</label>
+      <input id="edit-city" formControlName="city">
+    </div>
+
+    <div>
+      <label for="edit-phone">Телефон</label>
+      <input id="edit-phone" formControlName="phoneNumber">
+    </div>
+
+    <div>
+      <label for="edit-index">Индекс</label>
+      <input type="tel" id="edit-index" formControlName="index">
+    </div>
+
+    <div class="btns">
+      <div>
+        <button class="action" (click)="submit()">Сохранить</button>
+      </div>
+
+      <div style="float: right">
+        <button class="cancel" (click)="cancelEditing()">Отмена</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="under-table">
   <div>
-    <label for="edit-surname">Фамилия</label>
-    <input id="edit-surname" formControlName="surname">
+    <p *ngIf="!instance">Клиент не найден</p>
   </div>
 
   <div>
-    <label for="edit-name">Имя</label>
-    <input id="edit-name" formControlName="name">
+    <a [routerLink]="['../']">Вернуться к списку клиентов</a>
   </div>
-
-  <div>
-    <label for="edit-patronymic">Отчество</label>
-    <input id="edit-patronymic" formControlName="patronymic">
-  </div>
-
-  <div>
-    <label for="edit-country">Страна</label>
-    <input id="edit-country" formControlName="country">
-  </div>
-
-  <div>
-    <label for="edit-region">Область</label>
-    <input id="edit-region" formControlName="region">
-  </div>
-
-  <div>
-    <label for="edit-city">Город</label>
-    <input id="edit-city" formControlName="city">
-  </div>
-
-  <div>
-    <label for="edit-phone">Телефон</label>
-    <input id="edit-phone" formControlName="phoneNumber">
-  </div>
-
-  <div>
-    <label for="edit-index">Индекс</label>
-    <input type="tel" id="edit-index" formControlName="index">
-  </div>
-
-  <button (click)="cancelEditing()">Отмена</button>
-  <button (click)="submit()">Сохранить</button>
-</div>
-
-<div>
-  <p *ngIf="!instance">Клиент не найден</p>
-  <a [routerLink]="['../']">Вернуться к списку клиентов</a>
 </div>

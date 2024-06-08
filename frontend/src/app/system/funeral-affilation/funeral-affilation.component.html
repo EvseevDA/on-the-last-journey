@@ -1,12 +1,12 @@
-<div class="search">
-  <h3>Поиск заказа</h3>
-  <div>
+<div>
+  <h3 class="search-title">Поиск принадлежности</h3>
+  <div class="search">
     <label for="ids">id</label>
     <select id="ids" [(ngModel)]="selectedAffilationId">
       <option [value]="affilation.id" *ngFor="let affilation of affilations"> {{ affilation.id }} </option>
     </select>
   </div>
-  <button (click)="getSingletonAffilation(selectedAffilationId)">Перейти к принадлежности</button>
+  <button class="action" (click)="getSingletonAffilation(selectedAffilationId)">Перейти</button>
 </div>
 
 <div class="table">
@@ -34,10 +34,14 @@
     </tr>
     </tbody>
   </table>
-  <div>
-    <a [routerLink]="['./new/addition']">Добавить принадлженость</a>
+
+  <div class="under-table">
+    <div class="left">
+      <a [routerLink]="['./new/addition']">Добавить принадлженость</a>
+    </div>
+    <div class="right">
+      <a [routerLink]="['../']">Вернуться назад</a>
+    </div>
   </div>
-  <div>
-    <a [routerLink]="['../']">Вернуться назад</a>
-  </div>
+
 </div>

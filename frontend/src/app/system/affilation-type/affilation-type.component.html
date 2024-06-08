@@ -4,17 +4,21 @@
     <thead>
     <tr>
       <th>Категория</th>
-      <th colspan="1">Описание</th>
+      <th>Описание</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let type of affilationTypes">
       <td>{{ type.category }}</td>
-      <td> {{ type.description }} </td>
+      <td>{{ type.description }}</td>
+      <td></td>
     </tr>
     </tbody>
   </table>
-  <div>
-    <a [routerLink]="['../']">Вернуться назад</a>
+
+  <div class="under-table">
+    <div class="left">
+      <a [routerLink]="['../']">Вернуться назад</a>
+    </div>
   </div>
 </div>

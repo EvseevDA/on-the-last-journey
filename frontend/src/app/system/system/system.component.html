@@ -1,3 +1,4 @@
+<div>
 <nav>
   <ul>
     <li><a [routerLink]="['client']">Клиенты</a></li>
@@ -6,6 +7,7 @@
     <li><a [routerLink]="['provider']">Поставщики</a></li>
     <li><a [routerLink]="['funeral-affilation']">Похоронные принадлежности</a></li>
     <li><a [routerLink]="['user']">Пользователи</a></li>
-    <li *ngIf="window.sessionStorage.getItem('user')" (click)="logout()"><a>Выйти из аккаунта</a></li>
+    <li *ngIf="window.sessionStorage.getItem('user')" (click)="logout()"><a class="logout">Выйти из аккаунта</a></li>
   </ul>
 </nav>
+</div>

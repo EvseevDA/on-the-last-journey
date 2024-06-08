@@ -1,12 +1,12 @@
-<div class="search">
-  <h3>Поиск клиента</h3>
-  <div>
+<div>
+  <h3 class="search-title">Поиск клиента</h3>
+  <div class="search">
     <label for="ids">id</label>
     <select id="ids" [(ngModel)]="selectedClientId">
       <option [value]="client.id" *ngFor="let client of clients"> {{ client.id }} </option>
     </select>
   </div>
-  <button (click)="getSingletonClient(selectedClientId)">Перейти к клиенту</button>
+  <button class="action" (click)="getSingletonClient(selectedClientId)">Перейти</button>
 </div>
 
 <div class="table">
@@ -30,10 +30,13 @@
     </tr>
     </tbody>
   </table>
-  <div>
-    <a [routerLink]="['./new/addition']">Добавить клиента</a>
-  </div>
-  <div>
-    <a [routerLink]="['../']">Вернуться назад</a>
+
+  <div class="under-table">
+    <div class="left">
+      <a [routerLink]="['./new/addition']">Добавить клиента</a>
+    </div>
+    <div class="right">
+      <a [routerLink]="['../']">Вернуться назад</a>
+    </div>
   </div>
 </div>

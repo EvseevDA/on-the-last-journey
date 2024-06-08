@@ -1,17 +1,23 @@
-<div [formGroup]="form">
+<form class="form" [formGroup]="form">
+  <div class="form-inner">
 
-  <label for="login">Логин</label>
-  <input type="text" id="login" formControlName="login">
+    <h3>Вход</h3>
 
-  <label for="password">Пароль</label>
-  <input type="password" id="password" formControlName="password">
+    <label for="login">Логин</label>
+    <input type="text" id="login" formControlName="login">
 
-  <div>
-    <button [disabled]="!form.valid" (click)="submit()">Войти</button>
+    <label for="password">Пароль</label>
+    <input type="password" id="password" formControlName="password">
+
+    <div class="btns">
+      <div>
+        <button class="action" [disabled]="!form.valid" (click)="submit()">Войти</button>
+      </div>
+
+      <div style="float: right">
+        <button class="cancel" (click)="goHome()">Отмена</button>
+      </div>
+    </div>
+
   </div>
-
-  <div>
-    <button (click)="goHome()">Отмена</button>
-  </div>
-
-</div>
+</form>
