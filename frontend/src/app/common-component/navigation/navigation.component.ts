@@ -7,5 +7,5 @@ import {Component} from '@angular/core';
 })
 export class NavigationComponent {
 
-    protected readonly window = window;
+  protected readonly window = window;
 }

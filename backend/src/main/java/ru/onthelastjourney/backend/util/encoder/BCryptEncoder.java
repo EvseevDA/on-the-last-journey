@@ -1,13 +1,15 @@
 package ru.onthelastjourney.backend.util.encoder;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Value;
 
 
 public class BCryptEncoder implements Encoder {
 
-    @Value("${bcrypt.salt}")
-    private String salt;
+    private final String salt;
+
+    public BCryptEncoder(String salt) {
+        this.salt = salt;
+    }
 
     @Override
     public String encode(String original) {
