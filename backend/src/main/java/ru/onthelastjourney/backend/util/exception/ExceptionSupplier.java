@@ -48,7 +48,8 @@ public final class ExceptionSupplier {
     public static Supplier<EntityNotFoundException> userNotFoundByLoginAndPassword(String login, String password) {
         return () -> ApplicationExceptionFactory.EntityNotFound.byParams("User",
                 "login", login,
-                "password", password);
+                "password", password
+        );
     }
 
     private static <ID> Supplier<EntityNotFoundException> entityNotFoundById(String entityName, ID id) {

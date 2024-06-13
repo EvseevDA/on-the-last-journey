@@ -6,6 +6,8 @@ import ru.onthelastjourney.backend.dto.UserDto;
 import ru.onthelastjourney.backend.entity.User;
 import ru.onthelastjourney.backend.repository.UserRepository;
 import ru.onthelastjourney.backend.util.encoder.Encoder;
+import ru.onthelastjourney.backend.util.exception.EntityNotFoundException;
+import ru.onthelastjourney.backend.util.exception.ExceptionSupplier;
 import ru.onthelastjourney.backend.util.mapper.UserMapper;
 
 import java.util.List;
@@ -28,17 +30,18 @@ public class UserService extends AbstractService {
         return repository.findAll();
     }
 
-    public Optional<User> getById(Long id) {
-        return repository.findById(id);
+    public User getById(Long id) throws EntityNotFoundException {
+        return repository.findById(id).orElseThrow(ExceptionSupplier.userNotFoundById(id));
     }
 
-    public Optional<User> getByLogin(String login) {
-        return repository.findByLogin(login);
+    public User getByLogin(String login) throws EntityNotFoundException {
+        return repository.findByLogin(login).orElseThrow(ExceptionSupplier.userNotFoundByLogin(login));
     }
 
-    public Optional<User> getByLoginAndPassword(String login, String password) {
+    public User getByLoginAndPassword(String login, String password) throws EntityNotFoundException {
         String encodedPassword = encoder.encode(password);
-        return repository.findByLoginAndPassword(login, encodedPassword);
+        return repository.findByLoginAndPassword(login, encodedPassword)
+                .orElseThrow(ExceptionSupplier.userNotFoundByLoginAndPassword(login, password));
     }
 
     public User save(UserDto dto) {

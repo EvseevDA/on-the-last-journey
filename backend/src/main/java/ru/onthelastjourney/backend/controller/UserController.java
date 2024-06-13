@@ -30,12 +30,12 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public ResponseEntity<User> getById(@PathVariable("userId") Long userId) throws EntityNotFoundException {
-        return ResponseEntity.ok(service.getById(userId).orElseThrow(ExceptionSupplier.userNotFoundById(userId)));
+        return ResponseEntity.ok(service.getById(userId));
     }
 
     @GetMapping("/by-login/{login}")
     public ResponseEntity<User> getByLogin(@PathVariable("login") String login) throws EntityNotFoundException {
-        return ResponseEntity.ok(service.getByLogin(login).orElseThrow(ExceptionSupplier.userNotFoundByLogin(login)));
+        return ResponseEntity.ok(service.getByLogin(login));
     }
 
     @GetMapping("/{login}/{password}")
@@ -44,7 +44,6 @@ public class UserController {
                           @PathVariable("password") String password) throws EntityNotFoundException {
         return ResponseEntity.ok(
                 service.getByLoginAndPassword(login, password)
-                        .orElseThrow(ExceptionSupplier.userNotFoundByLoginAndPassword(login, password))
         );
     }
 
